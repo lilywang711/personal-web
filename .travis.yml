@@ -1,8 +1,14 @@
 language: node_js
 node_js:
-- '10.4.1'
+- 10.4.1
 branchs:
   only:
   - master
-script: 
-  - echo "Hello World"
+script:
+- echo "Hello World"
+before_install:
+- openssl aes-256-cbc -K $encrypted_22d2942debff_key -iv $encrypted_22d2942debff_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+after_success:
+- ssh root@lilywang.cn 'cd ~/projects/personal-web && git pull'
