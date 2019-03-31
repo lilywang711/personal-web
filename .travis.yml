@@ -13,4 +13,4 @@ addons:
 script:
 - echo "Hello World"
 after_success:
-- ssh root@lilywang.cn 'cd ~/projects/personal-web && git pull'
+- ssh root@lilywang.cn 'cd ~/projects/personal-web && git pull && sh ./start.sh'
