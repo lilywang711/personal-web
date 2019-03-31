@@ -4,3 +4,5 @@ node_js:
 branchs:
   only:
   - master
+script: 
+  - echo "Hello World"
